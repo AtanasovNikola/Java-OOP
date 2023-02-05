@@ -2,16 +2,27 @@ package polimorphism.Vehicles;
 
 import java.text.DecimalFormat;
 
-public class Car extends Vehicle {
+public class Bus extends Vehicle {
 
-    public Car(double fuelQuantity, double litersPerKm, double tankCapacity) {
+
+    public Bus(double fuelQuantity, double litersPerKm, double tankCapacity) {
         super(fuelQuantity, litersPerKm, tankCapacity);
-        this.airConditionerConsumption = 0.9;
+        this.airConditionerConsumption = 1.4;
+    }
+
+    void driveEmpty(double distance) {
+        double neededLiters = this.litersPerKm * distance;
+        printing(distance, neededLiters);
     }
 
     @Override
     void drive(double distance) {
+
         double neededLiters = (this.litersPerKm + this.airConditionerConsumption) * distance;
+        printing(distance, neededLiters);
+    }
+
+    private void printing(double distance, double neededLiters) {
         if (this.fuelQuantity - neededLiters > 0) {
             this.fuelQuantity -= neededLiters;
             System.out.printf("%s travelled %s km%n", this.getClass().getSimpleName(), new DecimalFormat("##.##").format(distance));
@@ -20,9 +31,10 @@ public class Car extends Vehicle {
         }
     }
 
+
     @Override
     void refuel(double liters) {
-        if (this.tankCapacity > this.fuelQuantity + liters && liters > 0) {
+        if (this.tankCapacity >= this.fuelQuantity + liters && liters > 0) {
             this.fuelQuantity += liters;
         } else if (liters <= 0) {
             System.out.println("Fuel must be a positive number");
@@ -30,6 +42,4 @@ public class Car extends Vehicle {
             System.out.println("Cannot fill fuel in tank");
         }
     }
-
-
 }
