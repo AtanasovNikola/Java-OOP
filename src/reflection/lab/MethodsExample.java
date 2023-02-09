@@ -1,4 +1,4 @@
-package reflection;
+package reflection.lab;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;

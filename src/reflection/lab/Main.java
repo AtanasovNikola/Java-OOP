@@ -1,4 +1,4 @@
-package reflection;
+package reflection.lab;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
