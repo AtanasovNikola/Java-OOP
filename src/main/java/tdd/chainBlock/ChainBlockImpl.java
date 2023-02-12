@@ -1,4 +1,4 @@
-package chainBlock;
+package tdd.chainBlock;
 
 import java.util.*;
 import java.util.stream.Collectors;

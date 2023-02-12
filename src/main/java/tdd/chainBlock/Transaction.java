@@ -1,4 +1,4 @@
-package chainBlock;
+package tdd.chainBlock;
 
 public interface Transaction {
     int getId();

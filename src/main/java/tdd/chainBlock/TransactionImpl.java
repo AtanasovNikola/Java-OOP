@@ -1,4 +1,4 @@
-package chainBlock;
+package tdd.chainBlock;
 
 public class TransactionImpl implements Comparable<TransactionImpl>, Transaction{
 
