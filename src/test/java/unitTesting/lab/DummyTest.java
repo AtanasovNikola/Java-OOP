@@ -1,4 +1,4 @@
-package unitTesting;
+package unitTesting.lab;
 
 
 import org.junit.Assert;

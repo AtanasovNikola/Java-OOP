@@ -1,6 +1,7 @@
-package unitTesting;
+package unitTesting.lab;
 
 import org.junit.*;
+
 
 import static org.junit.Assert.assertEquals;
 

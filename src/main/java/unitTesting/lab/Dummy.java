@@ -1,4 +1,4 @@
-package unitTesting;
+package unitTesting.lab;
 
 public class Dummy {
     private int health;
