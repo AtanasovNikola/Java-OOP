@@ -50,13 +50,8 @@ public class ChainBlockImpl implements ChainBlock {
 
     public Iterable<Transaction> getByTransactionStatus(TransactionStatus status) {
 
-        List<Transaction> filteredTransactions = new ArrayList<>();
-        for (Transaction transaction : transactionMap.values()) {
-            if (transaction.getStatus().equals(status)) {
-                filteredTransactions.add(transaction);
-            }
-        }
-//        transactionMap.values().stream().filter(t -> t.getStatus().equals(status)).collect(Collectors.toList());
+        List<Transaction> filteredTransactions = transactionMap.values()
+                .stream().filter(t -> t.getStatus().equals(status)).toList();
         if (filteredTransactions.size() == 0) {
             throw new IllegalArgumentException();
         }
